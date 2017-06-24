@@ -7,6 +7,7 @@ $( document ).ready(function() {
     var weatherTemperature = document.querySelector('#weatherTemperature');
     var high = document.getElementById('high');
     var low = document.getElementById('low');
+    var display = document.getElementById('display');
     
 });
 
@@ -46,6 +47,7 @@ function updateWeather(weatherData){
   high.textContent = weatherData.high;
   low.textContent = weatherData.low;
 
+  display.style.display = 'block';
 }
 
 function Weather(cityName, description){
