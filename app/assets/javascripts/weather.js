@@ -80,7 +80,7 @@ Object.defineProperty(Weather.prototype, 'temperature', {
     console.log(value)
     var kelvin = value;
     var fahrenheit = ((kelvin)*(9/5))-459.67;
-    this._high = Math.round(fahrenheit*10)/10 + " F";
+    this._high = "High: " + Math.round(fahrenheit*10)/10 + " F";
   }
 
 //sets low temp in F
@@ -92,6 +92,6 @@ Object.defineProperty(Weather.prototype, 'temperature', {
     console.log(value)
     var kelvin = value;
     var fahrenheit = ((kelvin)*(9/5))-459.67;
-    this._low = Math.round(fahrenheit*10)/10 + " F";
+    this._low = "Low: " + Math.round(fahrenheit*10)/10 + " F";
   }
 });
