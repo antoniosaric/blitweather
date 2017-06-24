@@ -11,6 +11,7 @@ $( document ).ready(function() {
     
 });
 
+//http api request
 function searchWeather(){
   var cityName = city.value;
 
@@ -18,7 +19,7 @@ function searchWeather(){
     return alert('Please enter a city name')
   }
   var http = new XMLHttpRequest();
-  var apiKey = "88b36adfd4e356bb9cc56518c5d26be5";
+  var apiKey = "";
   var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey
   var method = 'GET'
 
@@ -39,7 +40,7 @@ function searchWeather(){
   http.send();
 }
 
-
+//Displays weather search to screen
 function updateWeather(weatherData){
   weatherCity.textContent = weatherData.cityName;
   weatherDescription.textContent = weatherData.description;
@@ -50,12 +51,15 @@ function updateWeather(weatherData){
   display.style.display = 'block';
 }
 
+//Weather
 function Weather(cityName, description){
   this.cityName = cityName;
   this.description = description;
   this._description = '';
 }
 
+
+//sets temperature in F
 Object.defineProperty(Weather.prototype, 'temperature', {
   get:function(){
     return this._temperature;
@@ -67,6 +71,7 @@ Object.defineProperty(Weather.prototype, 'temperature', {
     this._temperature = Math.round(fahrenheit*10)/10 + " F";
   }
 
+//sets high temp in F
 });Object.defineProperty(Weather.prototype, 'high', {
   get:function(){
     return this._high;
@@ -78,6 +83,7 @@ Object.defineProperty(Weather.prototype, 'temperature', {
     this._high = Math.round(fahrenheit*10)/10 + " F";
   }
 
+//sets low temp in F
 });Object.defineProperty(Weather.prototype, 'low', {
   get:function(){
     return this._low;
